@@ -1,0 +1,60 @@
+{
+  "name": "nextjs-reactstrap",
+  "description": "NextJS CDG Admin",
+  "keywords": [
+    "NextJS",
+    "ReactJS",
+    "Reactstrap"
+  ],
+  "homepage": "https://www.globusthenken.com",
+  "version": "1.0.0",
+  "private": false,
+  "license": "Unlicense",
+  "author": {
+    "name": "JB",
+    "email": "jb@gmail.com",
+    "url": "https://www.globusthenken.com"
+  },
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "3": "^2.1.0",
+    "-": "0.0.1",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@prisma/client": "^3.5.0",
+    "autoprefixer": "^10.3.1",
+    "bootstrap": "^4.4.1",
+    "chart.js": "^3.3.2",
+    "cssnano": "^4.1.10",
+    "jquery": "^1.9.1",
+    "mongoose": "^5.12.14",
+    "next": "11.0.1",
+    "next-redux-wrapper": "^5.0.0",
+    "node-sass": "^4.14.1",
+    "package.json": "^2.0.1",
+    "postcss": "^8.2.2",
+    "postcss-cli": "^8.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-chartjs-2": "^3.0.3",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.0",
+    "reactstrap": "^8.9.0",
+    "redux": "^4.0.5",
+    "webpack": "^4.4.0"
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "prisma": "^3.5.0",
+    "redux-devtools-extension": "^2.13.8"
+  }
+}

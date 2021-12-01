@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ProjectData {
+  projectId       String   @id //Reference to Project_Id
+  createdAt       DateTime @default(now())
+  projectName     String   @db.VarChar(255) @unique
+  systemSize      Decimal? @db.Decimal(8,2)
+  state           String 
+  address         String
+  hostMeterName   String 
+  hostAccNum      Int       @unique
+  projectImgRef  String?
+  projectTimeSeries      ProjectTimeSeries[] //One to Many
+  SubscriberData         SubscriberData[]
+}
+
+model ProjectTimeSeries {
+ project                  ProjectData @relation (fields: [projectId], references: [projectId])
+
+ projectId                String   
+ id                       Int       @default(autoincrement())
+ createdAt                DateTime  @default(now())
+ billPeriodStartDate      DateTime  @db.Date //ISO-8601 19990108
+ billPeriodEndDate        DateTime  @db.Date
+ totalInjectionsKwh       Decimal   @db.Decimal(11,2)
+ valueStackCreditsDollar  Decimal   @db.Decimal(11,2)
+ hostBankCreditsDollar    Decimal   @db.Decimal(11,2)
+ idBillStartEndDate       String    @id //havve to define as default combiantion of idStartEnd
+
+
+}
+
+model SubscriberData {
+
+  project           ProjectData @relation (fields: [projectId], references: [projectId])
+  projectId         String  
+
+  subscriberId      String   @id //Reference to Project_Id
+  createdAt         DateTime @default(now())
+  firstName         String 
+  lastName          String
+  userType          String 
+  subsEmail         String   @unique
+  subsPassword      String       
+  utilityName       String    
+  utilityAccNum     String   @unique
+  enrollDate        DateTime @db.Date
+  allocationPercent Decimal  @db.Decimal(5,2)
+  serviceClass      String 
+  SubscriberTimesSeries  SubscriberTimeSeries[]
+}
+
+model SubscriberTimeSeries {
+
+  subscriber           SubscriberData @relation (fields: [subscriberId], references: [subscriberId])
+
+
+  subscriberId             String       
+  createdAt                DateTime     @default(now())
+  billPeriodStartDate      DateTime     @db.Date //ISO-8601 19990108
+  billPeriodEndDate        DateTime     @db.Date
+  idBillStartEndDate       String       @id //havve to define as default combiantion of idStartEnd
+  valueStackCreditDollar   Decimal      @db.Decimal(11,2)         
+  utilityBillAmount        Decimal      @db.Decimal(11,2)
+  escoChargesDollar        Decimal      @db.Decimal(11,2)
+  actualTotalBill          Decimal      @db.Decimal(11,2)       
+  actualBilledKwh          Decimal      @db.Decimal(11,2)    
+  creditAppliedDollar      Decimal      @db.Decimal(11,2)
+  previousMonthBank        Decimal      @db.Decimal(11,2)
+  monthlyBankContributions Decimal      @db.Decimal(11,2)
+  bankWithdrawDollar       Decimal      @db.Decimal(11,2)
+  bankedBalanceDollars     Decimal      @db.Decimal(11,2)
+}
+
+
+
+
+
