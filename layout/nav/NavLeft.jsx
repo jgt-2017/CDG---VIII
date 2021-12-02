@@ -25,7 +25,8 @@ export default function NavLeft(props) {
                 tag={item.as}
                 href={item.href}
               >
-                {item.icon && <i className={item.icon}></i>} {item.label}
+                {item.label}
+                {/* {item.icon && <i className={item.icon}></i>} {item.label} */}
               </ListGroupItem>
             );
           })}

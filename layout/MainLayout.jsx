@@ -50,10 +50,10 @@ export default function MainLayout(mainProps) {
       <NavBar {...props} />
       <Container fluid className="mt-2">
         <Row>
-          <Col md lg="2" align="left" className="">
+          <Col md lg="1" align="left" className="">
             <NavLeft activeLink={activeLink} />
           </Col>
-          <Col md lg="10" className="">
+          <Col md lg="11" className="">
             {children}
           </Col>
         </Row>
