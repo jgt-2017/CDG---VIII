@@ -94,12 +94,13 @@ export default function DashboardPage() {
                 Savings & Eco Impact Summary
               </CardTitle>
               {/* <CardText> */}
-              <Row className="mb-2">
+              <Row className="mb-2" align="center">
                 <Col
                   xs="4"
                   className="d-inline align-items-center text-success"
                 >
-                  <i className="fas fa-coins fa-3x"></i>{" "}
+                  <i className="fas fa-coins fa-3x"></i>
+                  {"  "}
                   <span>
                     $10,880
                     <CardText>
@@ -110,7 +111,7 @@ export default function DashboardPage() {
                 <Col xs="4" className="d-inline align-items-center text-info">
                   <i className="fas fa-smog fa-3x"></i>{" "}
                   <span>
-                    3.5 tons{" "}
+                    3.5 tons{"   "}
                     <CardText>
                       <Link href="">Coal Avoided</Link>
                     </CardText>
@@ -126,12 +127,6 @@ export default function DashboardPage() {
                   </span>
                 </Col>
               </Row>
-              {/* </CardText> */}
-              {/* <CardFooter> */}
-              <Button color="danger" size="md" block>
-                <i className="fas fa-chart-bar"></i> statistic
-              </Button>
-              {/* </CardFooter> */}
             </CardBody>
           </Card>
         </Col>

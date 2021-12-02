@@ -36,14 +36,15 @@ export default function NavBar({
     <Navbar bg="light" variant="light">
       <img src="/MM_logo.jpg" alt="Logo" className="" />
       <img src="/IKEA_SAMPLE.png" align="center" alt="Logo" className="" />
-
-      <Button align="right" color="primary">
-        Logout
-        {/* 
+      <Link href="/page/login">
+        <Button align="right" color="primary">
+          Logout
+          {/* 
             <Link href="/page/login">Logout</Link>
           
               */}
-      </Button>
+        </Button>
+      </Link>
     </Navbar>
   );
 }
