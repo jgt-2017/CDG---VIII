@@ -69,7 +69,7 @@ export default function DashboardPage() {
           <Card className="h-100 mb-2">
             <CardBody>
               <CardTitle tag="h4" className="headline-mm">
-                System Production - 2021
+                System Production - 2021 (Actuals)
               </CardTitle>
 
               <Row className="mb-2">
